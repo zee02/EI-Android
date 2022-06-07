@@ -27,4 +27,8 @@ public class Horario{
         return this.diaSemana == horarioProc.diaSemana && this.horaInicio + this.duracao > horarioProc.horaInicio &&
                 this.horaInicio < horarioProc.horaInicio + horarioProc.duracao;
     }
+
+    public String toString(){
+        return diaSemana + " " + horaInicio + "h - " + horaInicio + duracao + "h";
+    }
 }

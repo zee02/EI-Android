@@ -3,6 +3,8 @@ package com.example.trabalholaboratorialpl11;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -31,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
         //4º atribuir o adaptador à ListView
         listViewAulas.setAdapter(listAdapter);
+
+        listViewAulas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(DetalhesAulaActivity.createIntent(MainActivity.this, position));
+            }
+        });
 
     }
 }
